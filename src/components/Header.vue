@@ -18,10 +18,10 @@ import {
       <RouterLink to="/">
         <div class="flex items-center">
           <LayoutTemplate
-            size="36"
+            size="32"
             class="bg-yellow-400 rotate-10 rounded-sm shadow-sm"
           />
-          <div class="font-medium text-3xl font-pacifico ml-2 hidden md:block">
+          <div class="font-medium text-2xl font-pacifico ml-2 hidden md:block">
             Bento<span class="text-yellow-400">.</span>pro
           </div>
         </div></RouterLink
