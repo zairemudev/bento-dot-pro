@@ -1,7 +1,6 @@
+<script setup lang="ts">
+import AppLayout from "../layouts/AppLayout.vue";
+</script>
 <template>
-  <div>Project page</div>
+  <AppLayout>Project page</AppLayout>
 </template>
-
-<script setup lang="ts"></script>
-
-<style scoped></style>

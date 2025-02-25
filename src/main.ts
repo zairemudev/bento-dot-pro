@@ -3,6 +3,7 @@ import "./style.css";
 import App from "./App.vue";
 import { createPinia } from "pinia";
 import { createRouter, createWebHistory } from "vue-router";
+import { useDragAndDrop } from "vue-fluid-dnd";
 import HomePage from "./pages/HomePage.vue";
 import ProjectPage from "./pages/ProjectPage.vue";
 import TaskPage from "./pages/TaskPage.vue";
@@ -38,4 +39,5 @@ const app = createApp(App);
 
 app.use(pinia);
 app.use(router);
+app.provide("useDragAndDrop", useDragAndDrop);
 app.mount("#app");
