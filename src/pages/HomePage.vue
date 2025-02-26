@@ -104,8 +104,24 @@ import AppLayout from "../layouts/AppLayout.vue";
 
       <!-- list -->
       <div class="h-full grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
-        <div class="min-h-36 h-full rounded-lg bg-gray-200"></div>
-        <div class="min-h-36 h-full rounded-lg bg-gray-200"></div>
+        <!-- projects section -->
+        <div
+          class="min-h-36 h-full rounded-lg shadow border border-gray-100 bg-white"
+        >
+          <div class="h-full grid grid-cols-1 gap-4 lg:grid-row-2 lg:gap-6 p-4">
+            <div class="min-h-36 h-full">Current projects</div>
+            <div class="min-h-36 h-full">Upcoming projects</div>
+          </div>
+        </div>
+        <!-- tasks section -->
+        <div
+          class="min-h-36 h-full rounded-lg shadow border border-gray-100 bg-white"
+        >
+          <div class="h-full grid grid-cols-1 gap-4 lg:grid-row-2 lg:gap-6 p-4">
+            <div class="min-h-36 h-full">Current task</div>
+            <div class="min-h-36 h-full">Upcoming task</div>
+          </div>
+        </div>
       </div>
     </div>
   </AppLayout>

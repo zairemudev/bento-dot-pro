@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { RouterLink, useRouter, useRoute } from "vue-router";
-import { House, LayoutDashboard, Folder, List } from "lucide-vue-next";
+import {
+  House,
+  LayoutDashboard,
+  Folder,
+  Settings,
+  LayoutList,
+} from "lucide-vue-next";
 
 const menus = [
   {
@@ -20,13 +26,20 @@ const menus = [
     path: "/tasks",
     name: "tasks",
     label: "Tasks",
-    icon: List,
+    icon: LayoutList,
   },
+
   {
     path: "/dashboard",
     name: "dashboard",
     label: "Dashboard",
     icon: LayoutDashboard,
+  },
+  {
+    path: "/settings",
+    name: "settings",
+    label: "Settings",
+    icon: Settings,
   },
 ];
 // const router = useRouter();
@@ -44,14 +57,16 @@ onMounted(() => {
   >
     <template v-for="menu in menus">
       <RouterLink :to="{ name: menu.name }">
-        <div
+        <button
           :class="`${
-            route.name === menu.name ? 'text-gray-400' : ''
-          } h-[32px] w-full md:flex place-items-center gap-2 transition hover:text-gray-600/75 hidden`"
+            route.name === menu.name
+              ? 'text-gray-300 bg-gray-50  rounded-md w-full'
+              : ''
+          } p-2 lg:px-4 cursor-pointer h-[32px] w-full md:flex place-items-center gap-2 transition text-gray-500 hover:text-gray-500/75 hidden`"
         >
           <component :is="menu.icon" size="20" />
           <span class="hidden lg:block">{{ menu.label }}</span>
-        </div>
+        </button>
       </RouterLink>
     </template>
   </nav>

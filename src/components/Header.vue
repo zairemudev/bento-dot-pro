@@ -1,11 +1,18 @@
 <script setup lang="ts">
+// library
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+
+// components
 import {
   LayoutTemplate,
   Menu,
-  FolderPlus,
+  PlusCircle,
   Search,
   Command,
+  Sun,
+  Moon,
 } from "lucide-vue-next";
 import {
   PopoverArrow,
@@ -15,6 +22,16 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from "reka-ui";
+
+// constants
+const route = useRoute();
+const isDarkMode = ref<boolean>(false);
+
+// function
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value;
+  console.log("isDarkMode:", isDarkMode.value);
+};
 </script>
 
 <template>
@@ -59,17 +76,28 @@ import {
       </div>
 
       <!-- create project -->
-      <div class="flex items-center justify-end">
+      <div class="flex items-center justify-end gap-2">
         <button
-          class="rounded-md bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 hidden md:flex items-center"
+          v-if="route.name === 'home'"
+          class="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 hidden md:flex gap-2 items-center"
         >
-          <FolderPlus size="20" />
-          <span class="ml-2 text-sm">New project</span>
+          <PlusCircle size="18" />
+          <span class="text-xs">Project</span>
         </button>
         <button
-          class="block rounded-md bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+          className="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 flex gap-2"
+          @click="toggleDarkMode()"
         >
-          <Menu />
+          <Sun v-if="isDarkMode" size="18" />
+          <Moon v-else size="18" />
+          <span class="text-xs hidden md:block">{{
+            isDarkMode ? "Light" : "Dark"
+          }}</span>
+        </button>
+        <button
+          class="cursor-pointer block rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 md:hidden"
+        >
+          <Menu size="18" />
         </button>
       </div>
     </div>

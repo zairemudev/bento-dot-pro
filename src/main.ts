@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage.vue";
 import ProjectPage from "./pages/ProjectPage.vue";
 import TaskPage from "./pages/TaskPage.vue";
 import DashboardPage from "./pages/DashboardPage.vue";
+import SettingPage from "./pages/SettingPage.vue";
 
 const pinia = createPinia();
 const router = createRouter({
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/dashboard",
       name: "dashboard",
       component: DashboardPage,
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      component: SettingPage,
     },
   ],
 });
