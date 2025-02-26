@@ -7,6 +7,14 @@ import {
   Search,
   Command,
 } from "lucide-vue-next";
+import {
+  PopoverArrow,
+  PopoverClose,
+  PopoverContent,
+  PopoverPortal,
+  PopoverRoot,
+  PopoverTrigger,
+} from "reka-ui";
 </script>
 
 <template>

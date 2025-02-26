@@ -5,15 +5,18 @@ import Footer from "../components/Footer.vue";
 </script>
 <template>
   <div class="h-screen w-screen flex flex-col">
+    <!-- header -->
     <Header />
 
+    <!-- main container -->
     <main
-      class="w-full flex flex-1 max-w-screen-3xl items-center gap-6 px-4 sm:px-6 lg:px-8 h-full overflow-scroll"
+      class="w-full flex flex-1 max-w-screen-3xl gap-6 px-4 sm:px-6 lg:px-8 h-full overflow-scroll"
     >
       <SideNavbar />
-      <slot name="content" />
+      <slot />
     </main>
 
+    <!-- footer -->
     <Footer />
   </div>
 </template>
