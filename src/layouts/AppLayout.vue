@@ -10,7 +10,7 @@ import Footer from "../components/Footer.vue";
 
     <!-- main container -->
     <main
-      class="w-full flex flex-1 max-w-screen-3xl gap-6 px-4 sm:px-6 lg:px-8 h-full overflow-scroll"
+      class="w-full flex flex-1 max-w-screen-3xl gap-6 px-4 sm:px-6 lg:px-8 h-full overflow-hidden"
     >
       <SideNavbar />
       <slot />

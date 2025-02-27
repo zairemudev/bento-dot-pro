@@ -64,7 +64,7 @@ onMounted(() => {
               : ''
           } p-2 lg:px-4 cursor-pointer h-[32px] w-full md:flex place-items-center gap-2 transition text-gray-500 hover:text-gray-500/75 hidden`"
         >
-          <component :is="menu.icon" size="20" />
+          <component :is="menu.icon" :size="20" />
           <span class="hidden lg:block">{{ menu.label }}</span>
         </button>
       </RouterLink>

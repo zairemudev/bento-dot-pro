@@ -14,14 +14,6 @@ import {
   Sun,
   Moon,
 } from "lucide-vue-next";
-import {
-  PopoverArrow,
-  PopoverClose,
-  PopoverContent,
-  PopoverPortal,
-  PopoverRoot,
-  PopoverTrigger,
-} from "reka-ui";
 
 // constants
 const route = useRoute();
@@ -43,7 +35,7 @@ const toggleDarkMode = () => {
       <RouterLink to="/">
         <div class="flex items-center">
           <LayoutTemplate
-            size="32"
+            :size="32"
             class="bg-yellow-400 rotate-10 rounded-sm shadow-sm"
           />
           <div class="font-medium text-2xl font-pacifico ml-2 hidden md:block">
@@ -59,18 +51,18 @@ const toggleDarkMode = () => {
         <div class="relative items-center w-full hidden md:flex">
           <input
             type="text"
-            class="w-full border border-gray-100 rounded-xl max-w-md focus:outline-none p-2 pl-4 pr-8"
+            class="w-full border border-gray-100 rounded-xl max-w-md focus:outline-none py-1.5 pl-4 pr-8"
             placeholder="Search"
           />
-          <Search class="md:absolute right-2 text-gray-400" size="16" />
+          <Search class="md:absolute right-2 text-gray-400" :size="16" />
         </div>
 
         <button
           class="flex items-center md:hidden border border-gray-100 p-1 rounded-xl px-2"
         >
-          <Search class="md:absolute right-2 text-gray-400" size="16" />
+          <Search class="md:absolute right-2 text-gray-400" :size="16" />
 
-          <Command size="12" class="ml-2" />
+          <Command :size="12" class="ml-2" />
           <span class="text-sm">K</span>
         </button>
       </div>
@@ -81,15 +73,15 @@ const toggleDarkMode = () => {
           v-if="route.name === 'home'"
           class="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 hidden md:flex gap-2 items-center"
         >
-          <PlusCircle size="18" />
+          <PlusCircle :size="18" />
           <span class="text-xs">Project</span>
         </button>
         <button
           className="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 flex gap-2"
           @click="toggleDarkMode()"
         >
-          <Sun v-if="isDarkMode" size="18" />
-          <Moon v-else size="18" />
+          <Sun v-if="isDarkMode" :size="18" />
+          <Moon v-else :size="18" />
           <span class="text-xs hidden md:block">{{
             isDarkMode ? "Light" : "Dark"
           }}</span>
@@ -97,7 +89,7 @@ const toggleDarkMode = () => {
         <button
           class="cursor-pointer block rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 md:hidden"
         >
-          <Menu size="18" />
+          <Menu :size="18" />
         </button>
       </div>
     </div>

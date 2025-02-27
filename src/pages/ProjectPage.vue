@@ -39,12 +39,13 @@ onMounted(() => {
 </script>
 <template>
   <AppLayout>
-    <div class="h-full w-full py-6 flex flex-col gap-6">
+    <div class="w-full py-6 flex flex-col gap-6 overflow-scroll">
       <!-- header -->
-      <div class="flex justify-between pb-2 items-end">
+      <div class="flex justify-between items-end min-h-9">
         <!-- title -->
         <p class="text-xl font-bold">
-          Projects <span class="text-sm font-normal text-gray-500">(40)</span>
+          Projects
+           <!-- <span class="text-sm font-normal text-gray-500">(40)</span> -->
         </p>
         <!-- controller -->
         <div class="flex gap-2">
@@ -52,7 +53,7 @@ onMounted(() => {
           <button
             class="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 inline-flex items-center gap-2"
           >
-            <PlusCircle size="18" />
+            <PlusCircle :size="18" />
             <span class="text-xs hidden lg:block">Project</span>
           </button>
           <div class="border-[0.5px] border-gray-100"></div>
@@ -60,14 +61,14 @@ onMounted(() => {
           <button
             class="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 inline-flex items-center gap-2"
           >
-            <Filter size="18" />
+            <Filter :size="18" />
             <span class="text-xs hidden lg:block">Filter</span>
           </button>
           <!-- sort -->
           <button
             class="cursor-pointer rounded-md bg-gray-100 p-2 px-2.5 text-gray-500 transition hover:text-gray-500/75 inline-flex items-center gap-2"
           >
-            <ArrowDownUp size="18" />
+            <ArrowDownUp :size="18" />
             <span class="text-xs hidden lg:block">Sort</span>
           </button>
           <div class="border-[0.5px] border-gray-100"></div>
@@ -82,7 +83,7 @@ onMounted(() => {
                   view.value === activeView ? 'bg-white' : ''
                 } cursor-pointer inline-flex items-center gap-2 rounded-md p-1 px-1.5 text-gray-500 hover:text-gray-500/75 focus:relative`"
               >
-                <component :is="view.icon" size="18" />
+                <component :is="view.icon" :size="18" />
 
                 <span class="text-xs hidden lg:block">{{ view.label }}</span>
               </button>
